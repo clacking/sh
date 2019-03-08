@@ -1,0 +1,10 @@
+{
+    "type": "",
+    "host": "localhost",
+    "port": 5432,
+    "username": "",
+    "password": "",
+    "database": "devtest",
+    "entities": ["src/**/**.entity{.ts,.js}"],
+    "synchronize": true
+  }

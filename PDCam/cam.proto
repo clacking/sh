@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package gateway;
+
+message HumanCount {
+	int32 human = 1;
+	int32 mindeg = 2;
+	int32 maxdeg = 3;
+}
+
+message CC {
+	enum ColorType {
+		RAINBOW = 0;
+		GRAY = 1;
+		IRON = 2;
+	}
+
+	ColorType color = 1;
+}
+
+message Null {}
+
+service SHRoute {
+	rpc SendDeg (HumanCount) returns (Null) {}
+	rpc ChangeCC (CC) returns (Null) {}
+}

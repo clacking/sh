@@ -1,0 +1,35 @@
+{
+	"include": [
+		"$(MODDABLE)/examples/manifest_base.json",
+		"$(MODDABLE)/examples/manifest_net.json",
+		"$(MODDABLE)/modules/crypt/tls.json",
+		"$(MODULES)/pins/servo/manifest.json",
+		"$(MODULES)/pins/digital/manifest.json",
+	],
+	"modules": {
+		"*": [
+			"./main",
+			"$(MODULES)/network/http/*",
+			"$(MODULES)/network/websocket/*",
+			"$(MODULES)/data/base64/*",
+			"$(MODULES)/crypt/digest/*",
+			"$(MODULES)/crypt/digest/kcl/*",
+			"$(MODULES)/network/wifi/*",
+			"$(MODULES)/data/logical/*",
+			"$(MODULES)/pins/pwm/esp32/*",
+		],
+		"pins/pwm": "$(MODULES)/pins/pwm/pwm",
+		"MServo": "./mservo/*",
+	},
+	"preload": [
+		"http",
+		"lux",
+		"pins/pwm",
+		"$(MODULES)/crypt/data/ca107",
+	],
+	"platforms": {
+		"esp32": {
+			"include": "$(BUILD)/devices/esp32/manifest.json"
+		}
+	}
+}

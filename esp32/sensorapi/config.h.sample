@@ -1,0 +1,11 @@
+#ifndef   C_CONFIG
+#define   C_CONFIG
+
+const char* SSID = "SSID";
+const char* PASSWORD = "PW";
+// local host
+const char host[] = "192.168.163.22";
+
+const char* DEVICENAME = "/?n=centerdevice";
+
+#endif  C_CONFIG

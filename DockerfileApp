@@ -1,0 +1,11 @@
+FROM node:current
+
+WORKDIR /tmp/
+COPY package.json /tmp/
+RUN npm i
+
+EXPOSE 8080
+
+COPY . /tmp/
+CMD ["npm", "run", "start"]
+
